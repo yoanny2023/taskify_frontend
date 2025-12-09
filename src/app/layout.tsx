@@ -9,7 +9,7 @@ import {ToastContainer} from "react-toastify"
 
 
 export const metadata: Metadata = {
-  title: "Taskfy",
+  title: "Taskify",
   description: "Task manager app.",
 };
 
