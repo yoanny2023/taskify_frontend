@@ -34,10 +34,10 @@ function LoginForm() {
   },[formState]);
 
   const tl = gsap.timeline()
-
+  
     useGSAP(()=>{
-    tl.to("#title",{ease:"power1.inOut",opacity:1,y:0,duration:2})
-    tl.from(".gsap_form",{x:"-100%",ease:"back.inOut",duration:1},">-1")
+    tl.to("#title",{ease:"power3.inOut",opacity:1,y:0,duration:2})
+    tl.from(".gsap_form",{x:"-100vw",opacity:0,ease:"back.inOut",duration:3},">-1")
   },[]);
    
   return (  

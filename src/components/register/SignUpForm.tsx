@@ -36,13 +36,13 @@ function SignUpForm() {
      const tl = gsap.timeline()
     
         useGSAP(()=>{
-        tl.to("#title",{ease:"power1.inOut",opacity:1,y:0,duration:2})
-        tl.from(".gsap_form",{x:"-100%",ease:"back.inOut",duration:1},">-1")
+        tl.to("#title",{ease:"power3.inOut",opacity:1,y:0,duration:2})
+        tl.from(".gsap_form",{x:"-100vw",opacity:0,ease:"back.inOut",duration:3},">-1")
       },[]);
 
   return (
     <>
-      <h1 id='title' className="text-3xl font-bold text-center text-white mb-4">
+      <h1 id='title' className="opacity-0 text-3xl font-bold text-center text-white mb-4">
         Task<span className="text-purple-600">Flow</span>
       </h1>
       <form action={formAction} className="gsap_form bg-slate-900/60 backdrop-blur-xl flex flex-col gap-3 border border-slate-800 px-4 py-2 rounded-md">
