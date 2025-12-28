@@ -16,11 +16,6 @@ function SideBar({pathname}:{pathname?:string}) {
     <nav className="side_menu sticky top-5 h-[95vh] bg-slate-950/70 backdrop-blur-sm border-r border-slate-800
      rounded-md px-4 py-2">  
       <ul className='flex flex-col gap-3 text-slate-300 hover:text-white'>
-        {/* <li className='flex gap-2 items-center py-2 px-4 rounded-md 
-        hover:bg-purple-600/70 hover:cursor-pointer transition duration-300'>
-        <IconHome stroke={1} size={24} />    
-        <span>Home</span>
-        </li> */}
         <li className='flex gap-2 items-center py-2 px-4 rounded-md 
         hover:bg-purple-600/70 hover:cursor-pointer transition duration-300'>
         <IconDashboard stroke={1} size={24} />
