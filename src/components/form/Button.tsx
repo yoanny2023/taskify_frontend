@@ -4,6 +4,7 @@ import React from 'react'
 type ButtonProps = React.ComponentProps<"button"> & {
   label: string
   isPending?: boolean
+  loading?: string
 }
 
 function Button({label,isPending, ...props}: ButtonProps) {
@@ -16,7 +17,7 @@ function Button({label,isPending, ...props}: ButtonProps) {
     ${props.className ? props.className : ""}
     `}
     >
-      {isPending ? "Submitting..." :label}  
+      {isPending ? props.loading :label}  
     </button>
   )
 }

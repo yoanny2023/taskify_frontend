@@ -2,7 +2,7 @@ import { Task } from "@/context/taskContext";
 import {v4 as uuid} from "uuid"
 
 export const mockTasks: Task[] = [
-  {
+  /* {
     id: uuid(),
     title: "Design login page",
     description: "Create UI for login screen and responsive state.",
@@ -36,5 +36,5 @@ export const mockTasks: Task[] = [
     description: "Animate website to impress.",
     status: "todo",
     createdAt: new Date().toISOString(),
-  },
+  }, */
 ];

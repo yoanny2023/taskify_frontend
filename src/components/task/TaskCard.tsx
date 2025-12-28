@@ -13,14 +13,14 @@ type Task = {
 
 type TaskCardProps = {
   task: Task;
-};
+};  
 
 export default function TaskCard({ task }: TaskCardProps) {
   const{updateTaskStatus,updateTask,deleteTask} = useTasks();
 
   const [isEditing, setIsEditing] = React.useState(false)
   const [title, setTitle] = React.useState(task.title)
-  const [description, setDescription] = React.useState(task.description)  
+  const [description, setDescription] = React.useState(task.description) 
 
   const nextStatus = (s: TaskStatus) =>
   s === "todo" ? "in-progress" : s === "in-progress" ? "done" : "todo";
@@ -53,7 +53,7 @@ export default function TaskCard({ task }: TaskCardProps) {
         </button>
       </>
     ) : (
-      <>
+      <div className="card">
         <h3 className="font-semibold text-white">{task.title}</h3>
         <p className="text-zinc-400 text-sm">{task.description}</p>
         <span className="text-xs text-zinc-500">
@@ -81,7 +81,7 @@ export default function TaskCard({ task }: TaskCardProps) {
             Delete
           </button>
         </div>
-      </>
+      </div>
     )}
     </div>
   );

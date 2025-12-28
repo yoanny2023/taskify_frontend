@@ -16,7 +16,7 @@ function TasksPage() {
         <SideBar pathname={pathname} />   
         <main>
           <Header />
-          <section className='mt-3 bg-zinc-950/70 rounded-md p-3' >
+          <section className='mt-3 bg-zinc-950/70 rounded-md p-3 overflow-x-hidden' >
             <div className='flex justify-between items-center mb-2'>
               <span>Tasks</span>
               <AddTaskButton />

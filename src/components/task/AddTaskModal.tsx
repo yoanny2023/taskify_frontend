@@ -2,6 +2,8 @@
 
 import React from "react";
 import { useTasks } from "@/context/taskContext";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 type Props = { onClose: () => void };
 
@@ -23,14 +25,17 @@ export default function AddTaskModal({ onClose }: Props) {
 
     addTask({ title: title.trim(), description: description.trim(), status });
     onClose();
-    // optional: clear fields (if component stays mounted)
     setTitle("");
     setDescription("");
     setStatus("todo");
   }
 
+  useGSAP(() => {
+  gsap.from(".modal",{opacity:0,scale:0, ease:"power1.inOut",duration:1})
+},[])
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+    <div className="modal fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md bg-zinc-900 p-6 rounded-lg shadow-lg"

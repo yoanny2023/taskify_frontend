@@ -37,7 +37,7 @@ function LoginForm() {
   
     useGSAP(()=>{
     tl.to("#title",{ease:"power3.inOut",opacity:1,y:0,duration:2})
-    tl.from(".gsap_form",{x:"-100vw",opacity:0,ease:"back.inOut",duration:3},">-1")
+    tl.from(".gsap_form",{x:"-100vw",opacity:0,ease:"back.inOut",duration:2.5},">-1")
   },[]);
    
   return (  
@@ -45,7 +45,7 @@ function LoginForm() {
       <h1 id="title" className="opacity-0 text-3xl font-bold text-center text-white mb-8">
         Task<span className="text-purple-600">Flow</span>
       </h1>
-      <form action={formAction} className="gsap_form bg-slate-900/60 backdrop-blur-xl flex flex-col gap-3 border border-slate-800 px-4 py-2 rounded-md">
+      <form action={formAction} className="gsap_form bg-slate-900/60 backdrop-blur-xl flex flex-col gap-3 border border-slate-800 px-5 py-2 rounded-md">
         <Image src="/images/logo.svg" width={120} height={120} alt='logo' priority className='mx-auto' />
         <Input label='Email' name='email' placeholder='email' />
         {formState.fieldErrors?.email?.map(err => (
@@ -56,7 +56,7 @@ function LoginForm() {
         <ErroField key={err} err={err} /> 
         ) )}
         <ErrorMessage error={formState.error} />
-        <Button label='Login' className='w-full' isPending={isPending}  />
+        <Button label='Login' className='w-full' loading="Logging in..." isPending={isPending}  />
         <p className="text-center text-slate-500 text-sm mt-6">
               Don’t have an account yet?{" "}
               <Link  
