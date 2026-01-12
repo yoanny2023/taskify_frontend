@@ -18,9 +18,9 @@ export default function AddTaskButton() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="btn opacity-0 invisible flex justify-center items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded shadow text-sm cursor-pointer transition durantion-300"
+        className="btn opacity-0 invisible flex justify-center items-center px-2 py-1 md:px-4 md:py-2 bg-purple-600 hover:bg-purple-700 text-white rounded shadow text-sm cursor-pointer transition durantion-300"
       >
-        <IconPlus size={24} color="#fff" stroke={2} /> <span className="font-semibold">Add Task</span> 
+        <IconPlus size={24} color="#fff" stroke={2} /> <span className="font-semibold text-sm md:text-md">Add Task</span> 
       </button>
 
       {open && <AddTaskModal onClose={() => setOpen(false)} />} 

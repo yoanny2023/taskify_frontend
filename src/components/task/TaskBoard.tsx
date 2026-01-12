@@ -38,11 +38,11 @@ function TaskBoard() {
 
   return (
       <>
-      { tasks.length === 0 ? <p className='text-zinc-500 text-center'>No tasks added, please add one.</p> : (
+      { tasks.length === 0 ? <p className='text-zinc-500 text-center mt-3'>No tasks added, please add one.</p> : (
         <div className='board'>
         <section>
           <h2 className="text-purple-500 font-semibold p-3 rounded-md text-center my-3 text-lg">To do</h2>
-          <div className='todo-col grid grid-cols-3 gap-3'>
+          <div className='todo-col flex flex-wrap gap-3 sm:grid sm:grid-cols-2 sm:gap-1 md:grid md:grid-cols-3 md:gap-3'>
             {todoTasks.map((task)=>(
             <TaskCard key={task.id} task={task} />
           ))}

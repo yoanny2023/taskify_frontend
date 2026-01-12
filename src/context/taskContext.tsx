@@ -3,6 +3,7 @@
 import React from "react"
 import {mockTasks} from "@/data/tasks"
 import { v4 as uuid } from "uuid";
+import useToggle from "@/hooks/useToggle";
 
 export type TaskStatus = "todo" | "in-progress" | "done";
 
@@ -21,6 +22,8 @@ type TaskContextProps = {
   updateTask: (id: string, update: Partial<Omit<Task, "id" | "createdAt">>) => void
   deleteTask: (id: string) => void;
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+  showMenu: boolean;
+  toggleMenu: () => void
 }
 
 const TaskContext = React.createContext<TaskContextProps | null>(null)
@@ -32,6 +35,7 @@ export function useTasks(){
 }
 
 export function TaskContextProvider({children}: {children :React.ReactNode}){
+  const[showMenu,toggleMenu] = useToggle(false);
   const[tasks,setTasks] = React.useState<Task[]>(() => {
   
       if(typeof window !== "undefined"){
@@ -84,9 +88,15 @@ export function TaskContextProvider({children}: {children :React.ReactNode}){
   )))
   }
 
+/*   function toggleMenu (){
+    return useToggle(false)
+  } */
+
   return (
     <TaskContext.Provider value = {
-      {tasks,addTask,updateTaskStatus,updateTask,deleteTask,setTasks}
+      {tasks,addTask,updateTaskStatus,updateTask,deleteTask,setTasks,
+      showMenu,toggleMenu
+      }  
       }>
       {children}
     </TaskContext.Provider>
