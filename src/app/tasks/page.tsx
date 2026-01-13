@@ -22,7 +22,7 @@ function TasksPage() {
         flex flex-col flex-1 gap-3'>  
           <Header />    
           {showMenu ? <MenuModal /> : (
-          <section className='flex-1 bg-zinc-950/70 rounded-md p-3 overflow-y-auto' >
+          <section className='overflow-x-hidden flex-1 bg-zinc-950/70 rounded-md p-3 overflow-y-auto' >
             <div className='flex justify-between items-center'>
               <span>Tasks</span>
               <AddTaskButton />  
