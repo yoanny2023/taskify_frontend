@@ -5,8 +5,13 @@ import gsap from "gsap";
 function Footer() {
   useGSAP(()=>{
     const tl = gsap.timeline();
-    tl.from(".footer > *",{y:70,opacity:0,duration:2,ease:"power1.out"})
-  },[]);
+    tl.from(".footer > *",{y:70,opacity:0,duration:2,ease:"power1.out",clearProps: "all"})
+  },
+   {
+      dependencies: [],
+      revertOnUpdate: false,
+    }
+  );
 
   return ( 
    <footer className={`footer mt-auto flex items-center gap-3`}>
