@@ -11,6 +11,7 @@ import { toast } from 'react-toastify'
 import Image from 'next/image'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import { IconLock, IconMail } from '@tabler/icons-react'
 
 function LoginForm() {
   const{login} = useAuth();
@@ -45,13 +46,13 @@ function LoginForm() {
       <h1 id="title" className="opacity-0 text-3xl font-bold text-center text-white mb-8">
         Task<span className="text-purple-600">Flow</span>
       </h1>
-      <form action={formAction} className="gsap_form bg-slate-900/60 backdrop-blur-xl flex flex-col gap-3 border border-slate-800 px-5 py-2 rounded-md">
+      <form action={formAction} className="gsap_form bg-slate-900/60 backdrop-blur-xl flex flex-col gap-3 border border-slate-800 px-8 py-4 sm:px-10 sm:py-6 rounded-2xl">
         <Image src="/images/logo.svg" width={120} height={120} alt='logo' priority className='mx-auto' />
-        <Input label='Email' name='email' placeholder='email' />
+        <Input name='email' placeholder='Email' Icon={IconMail} />
         {formState.fieldErrors?.email?.map(err => (
         <ErroField key={err} err={err} />  
         ) )}
-        <Input type='password' label="Password" name="password" placeholder="password" />
+        <Input type='password' name="password" placeholder="Password" Icon={IconLock} />
         {formState.fieldErrors?.password?.map(err => (
         <ErroField key={err} err={err} /> 
         ) )}

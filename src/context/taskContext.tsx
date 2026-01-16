@@ -15,8 +15,13 @@ export type TaskStatus = "todo" | "in-progress" | "done";
   createdAt: string;
 };
 
+export type TaskFilter = "all" | "todo" | "in-progress" | "done";
+
 type TaskContextProps = {
   tasks: Task[],
+  filteredTasks: Task[];
+  filter: TaskFilter;
+  setFilter: (filter: TaskFilter) => void;
   addTask: (task: Omit<Task, "id" |"createdAt"> & {id?: string} ) => void,
   updateTaskStatus: (id: string, newStatus: TaskStatus) => void;
   updateTask: (id: string, update: Partial<Omit<Task, "id" | "createdAt">>) => void
@@ -25,6 +30,7 @@ type TaskContextProps = {
   showMenu: boolean;
   toggleMenu: () => void
 }
+
 
 const TaskContext = React.createContext<TaskContextProps | null>(null)
 
@@ -47,6 +53,14 @@ export function TaskContextProvider({children}: {children :React.ReactNode}){
       {...t, 
         createdAt: new Date( t.createdAt ?? Date.now()).toISOString()} ))
   });
+
+  const [filter, setFilter] = React.useState<TaskFilter>("all");
+
+  const filteredTasks = React.useMemo(() => {  
+    if (filter === "all") return tasks;
+    return tasks.filter(task => task.status === filter);
+  }, [tasks, filter]);
+
 
     React.useEffect(() => {
     try {
@@ -88,13 +102,10 @@ export function TaskContextProvider({children}: {children :React.ReactNode}){
   )))
   }
 
-/*   function toggleMenu (){
-    return useToggle(false)
-  } */
-
   return (
     <TaskContext.Provider value = {
-      {tasks,addTask,updateTaskStatus,updateTask,deleteTask,setTasks,
+      {tasks, filteredTasks,filter,setFilter,
+      addTask,updateTaskStatus,updateTask,deleteTask,setTasks,
       showMenu,toggleMenu
       }  
       }>

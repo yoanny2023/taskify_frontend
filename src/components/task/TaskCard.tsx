@@ -1,4 +1,5 @@
 import { useTasks } from "@/context/taskContext";
+import { IconTrash,IconPencil } from "@tabler/icons-react";
 import React from "react";
 
 type TaskStatus = "todo" | "in-progress" | "done";
@@ -26,9 +27,12 @@ export default function TaskCard({ task }: TaskCardProps) {
   s === "todo" ? "in-progress" : s === "in-progress" ? "done" : "todo";
 
   return (
-    <div className="bg-zinc-800 p-4 rounded-xl shadow-md flex flex-col gap-3 border border-zinc-700
-    hover:bg-zinc-950 hover:shadow-purple-600 hover:shadow-lg hover:scale-105 transition duration-300 ">
-         {isEditing ? (
+    <div className=" bg-white/10 backdrop-blur-md border border-white/20     
+    shadow-xl shadow-black/30  p-4 rounded-xl
+    flex flex-col gap-3 border border-zinc-700
+    hover:bg-white/15 hover:border-purple-500/40 hover:shadow-purple-500/20 
+    hover:scale-105 transition duration-300 ">
+      {isEditing ? (
       <>  
         <input
           value={title}
@@ -53,7 +57,7 @@ export default function TaskCard({ task }: TaskCardProps) {
         </button>
       </>
     ) : (
-      <div className="card">
+      <div className="relative car">
         <h3 className="font-semibold text-white">{task.title}</h3>
         <p className="text-zinc-400 text-sm">{task.description}</p>
         <span className="text-xs text-zinc-500">
@@ -68,18 +72,14 @@ export default function TaskCard({ task }: TaskCardProps) {
           >
             Next Status
           </button>
-          <button
+          <IconPencil stroke={1} size={22}
             onClick={() => setIsEditing(true)}
-            className="border border-yellow-500 text-yellow-400 px-3 py-1 rounded text-xs hover:bg-yellow-500 hover:text-black cursor-pointer transition duration-300"
-          >
-            Edit
-          </button>
-          <button
+            className="absolute -right-1 text-yellow-500 hover:text-yellow-600 cursor-pointer transition duration-300"
+          />
+          <IconTrash stroke={1} size={18}
             onClick={() => deleteTask(task.id)}
-            className="border border-red-600 text-red-400 px-3 py-1 rounded text-xs hover:bg-red-600 hover:text-white cursor-pointer transition duration-300"
-          >
-            Delete
-          </button>
+            className="absolute -top-3 -right-1 text-red-500 hover:text-red-600 cursor-pointer transition duration-300"
+          />
         </div>
       </div>
     )}

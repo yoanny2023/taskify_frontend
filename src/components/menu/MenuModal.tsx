@@ -17,7 +17,7 @@ function MenuModal() {
 
   return (
     <Pagina>
-        <nav className='gsap_nav sm:hidden flex flex-col max-w-[85%] p-3 mx-auto mt-2 rounded-md bg-slate-950/70 backdrop-blur-xl shadow-lg'>
+        <nav className='gsap_nav sm:hidden flex flex-col max-w-[85%] p-3 mx-auto mt-2 rounded-xl bg-slate-950/70 backdrop-blur-xl shadow-lg'>
         <div className='flex items-center justify-between p-3 border-b border-zinc-600 font-semibold'>
           <span className="">Menu</span>
           <span className='text-red-500 hover:text-red-700'
