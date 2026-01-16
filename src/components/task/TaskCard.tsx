@@ -27,11 +27,11 @@ export default function TaskCard({ task }: TaskCardProps) {
   s === "todo" ? "in-progress" : s === "in-progress" ? "done" : "todo";
 
   return (
-    <div className=" bg-white/10 backdrop-blur-md border border-white/20     
+    <div className="card bg-white/10 backdrop-blur-md border border-white/20     
     shadow-xl shadow-black/30  p-4 rounded-xl
     flex flex-col gap-3 border border-zinc-700
     hover:bg-white/15 hover:border-purple-500/40 hover:shadow-purple-500/20 
-    hover:scale-105 transition duration-300 ">
+    hover:scale-105 transition duration-300 will-change-transform ">
       {isEditing ? (
       <>  
         <input
@@ -57,7 +57,7 @@ export default function TaskCard({ task }: TaskCardProps) {
         </button>
       </>
     ) : (
-      <div className="relative car">
+      <div className="relative">
         <h3 className="font-semibold text-white">{task.title}</h3>
         <p className="text-zinc-400 text-sm">{task.description}</p>
         <span className="text-xs text-zinc-500">
