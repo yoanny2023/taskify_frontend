@@ -1,3 +1,9 @@
+
+html, body {
+  height: 100%;
+  /* overflow-x: hidden; */
+}
+
 @import "tailwindcss";
 
 @theme {
@@ -28,3 +34,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+:root {
+  --safe-top: env(safe-area-inset-top);
+  --safe-bottom: env(safe-area-inset-bottom);
+}
+
+input, textarea, select {
+  color: var(--foreground);
+  /* caret-color: var(--foreground); */
+}
+
+/* Fix iOS dark mode autofill for text color only */
+/* input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: var(--foreground);
+} */

@@ -26,11 +26,11 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" className="antialiased">
-        <body className={poppins.className}>
+    <html lang="en" className="antialiased h-full">
+        <body className={`${poppins.className} min-h-[100dvh] overflow-x-hidden`}>
           <AuthContextProvider>
           <TaskContextProvider> 
-            {children}
+            {children}   
           <ToastContainer
               position="top-right"
               autoClose={3000}
