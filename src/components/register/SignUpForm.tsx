@@ -46,7 +46,7 @@ function SignUpForm() {
       <h1 id='title' className="opacity-0 text-3xl font-bold text-center text-white mb-4">
         Task<span className="text-purple-600">Flow</span>
       </h1>
-      <form action={formAction} className="gsap_form bg-slate-900/60 backdrop-blur-xl flex flex-col gap-3 border border-slate-800 px-10 py-6 rounded-2xl">
+      <form action={formAction} className="gsap_form bg-slate-900/60 backdrop-blur-xl flex flex-col gap-3 border border-slate-800 px-14 py-7 sm:px-16 sm:py-8 rounded-2xl">
         <Image src="/images/logo.svg" width={120} height={120} alt='logo' priority className='mx-auto hidden sm:block' />
         <Input name='username' placeholder='Username' Icon={IconUser} />
         {formState.fieldErrors?.username?.map(err => (

@@ -3,8 +3,10 @@ import SignUpForm from '@/components/register/SignUpForm'
 
 function Register() {
   return (
-     <Pagina className="flex flex-col justify-center items-center">
-       <SignUpForm /> 
+     <Pagina className="flex justify-center items-center">
+      <div className="w-full max-w-sm sm:max-w-md px-3">
+        <SignUpForm /> 
+      </div>
     </Pagina>
   )
 }
