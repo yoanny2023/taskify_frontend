@@ -16,10 +16,9 @@ function Header() {
   },[])
 
   return (  
-    <header className="header fixed top-4 sm:left-4 sm:left-[calc(250px+2rem)]
-     z-20 h-16 w-[calc(100%-1rem)] sm:w-[calc(100%-250px-3rem)]
-    bg-neutral-900/80 border-b border-slate-800  
-      flex items-center p-3 rounded-md">
+    <header className="header fixed top-4 left-4 right-4 sm:left-[calc(250px+2rem)] sm:right-4
+     z-20 h-16 bg-neutral-900/80 border-b border-slate-800  
+      flex items-center p-3 px-3 sm:px-3 rounded-md">
       <h2 className='title mr-auto text-sm md:text-xl text-slate-200 font-bold'>Welcome, {user?.username.charAt(0).toUpperCase()}{user?.username.slice(1)} 👋 </h2>
       <div className=' flex justify-center items-center gap-3'>
         <select value={filter}
