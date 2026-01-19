@@ -6,7 +6,7 @@ import Pagina from "@/components/Pagina";
 export default function Home() {   
   return (
     <Pagina className="flex justify-center items-center">
-      <div className="w-full max-w-sm sm:px-3 sm:max-w-md">
+      <div className="w-full max-w-sm px-1 sm:px-3 sm:max-w-md">
         <LoginForm /> 
       </div>
     </Pagina>
