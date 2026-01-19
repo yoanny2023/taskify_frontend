@@ -1,7 +1,6 @@
 
 html, body {
   height: 100%;
-  /* overflow-x: hidden; */
 }
 
 @import "tailwindcss";
@@ -48,12 +47,4 @@ body {
 
 input, textarea, select {
   color: var(--foreground);
-  /* caret-color: var(--foreground); */
 }
-
-/* Fix iOS dark mode autofill for text color only */
-/* input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-  -webkit-text-fill-color: var(--foreground);
-} */
