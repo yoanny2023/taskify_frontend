@@ -57,7 +57,7 @@ function LoginForm() {
         <ErroField key={err} err={err} /> 
         ) )}
         <ErrorMessage error={formState.error} />
-        <Button label='Login' className='w-full' loading="Logging in..." isPending={isPending}  />
+        <Button label='Loginy' className='w-full' loading="Logging in..." isPending={isPending}  />
         <p className="text-center text-slate-500 text-sm mt-6">
               Don’t have an account yet?{" "}
               <Link  
